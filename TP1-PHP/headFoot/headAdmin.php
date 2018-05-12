@@ -39,7 +39,11 @@
             </nav>
         </div>
         
-        <!-- Modal Structure -->
+        <!------------------------------------------------------------------------------------
+
+            Form Add Photo
+
+        --------------------------------------------------------------------------------------->
         <div id="modal1" class="modal">
             <div class="row">
                 <div class='col s10 center-align offset-s1'>
@@ -64,6 +68,12 @@
                 </div>
             </div>
         </div>
+        
+        <!------------------------------------------------------------------------------------
+
+            Form Add Student
+
+        --------------------------------------------------------------------------------------->
         
         <div id="modal2" class="modal">
             <div class='row'>
@@ -121,7 +131,10 @@
                     
 
                     <div class='row'>
-                        <div class='col s6 center-align offset-s3'>
+                        <div class='col s6 center-align'>
+                            <button class='btn waves-effect waves-light amber accent-3' id="resetButton">Reset form</button>
+                        </div>
+                        <div class='col s6 center-align'>
                             <button class='btn waves-effect waves-light amber accent-3' type='submit' name='action'>Add Student
                                 <i class='material-icons right'>send</i>
                             </button>
@@ -130,3 +143,4 @@
                 </form>
             </div>
         </div>
+        
