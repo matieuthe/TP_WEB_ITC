@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['username']))
-        header("Location: login.php");
+        header("Location: index.php");
     
     include_once("./process/config.php");
     //Get all the students from the table
@@ -28,22 +28,28 @@
                     <thead>
                         <th>Number</th>
                         <th>ID</th>
-                        <th>Name</th>
-                        <th>Gender</th>
+                        <th>First Name</th>
+                        <th>Last name</th>
+                        <th>Sex</th>
                         <th>Telephone</th>
+                        <th>Email</th>
+                        <th>Group</th>
                         <th>Action</th>
                     </thead>
-                    <tbody>
+                    <tbody id="bodyDash">
                         <?php
                             $compteur = 1;
                             foreach($arrStudents as $student){
-                                $str = "<tr>";
+                                $str = "<tr id='".$student['id']."'>";
                                     $str .= "<td>".$compteur++."</td>";
                                     $str .= "<td>".$student['id']."</td>";
-                                    $str .= "<td>".$student['full_name']."</td>";
+                                    $str .= "<td>".$student['first_name']."</td>";
+                                    $str .= "<td>".$student['last_name']."</td>";
                                     $str .= "<td>".$student['gender']."</td>";
                                     $str .= "<td>".$student['phone']."</td>";
-                                    $str .= "<td> <div class='row'><a class='col s6 center-align waves-effect waves-light btn-small'>Edit</a><a class='col s6 center-align waves-effect waves-light btn-small'>Remove</a></div></td>";
+                                    $str .= "<td>".$student['email']."</td>";
+                                    $str .= "<td>".$student['groupITC']."</td>";
+                                    $str .= "<td> <div class='row'><a class='col s6 center-align waves-effect waves-light btn-small'>Edit</a><a class='removeButton col s6 center-align waves-effect waves-light btn-small'>Remove</a></div></td>";
                                 $str .= "</tr>\n";
                                 echo $str;
                             }

@@ -3,7 +3,20 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('.modal').modal();
+            
+            
+            
+            $('#buttonAddStudent').click(function(e){
+                $("#titleAddStudent").text("Add Student");
+                $("#titleAddStudent").css('color','black');
+                document.getElementById("formAddStudent").reset();
+                $('#modal2').modal();
+            });
+
+            $('#buttonAddPhoto').click(function(e){
+                document.getElementById("formAddPhoto").reset();
+                $('#modal1').modal();
+            });
             
             $("#formAddStudent").submit(function(e) {
                 e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -25,8 +38,32 @@
 
             });
             
-            $('#modalDashBoard').modal();
             
+            $('.removeButton').click(function(e){
+                var ligne = $(this).parent().parent().parent();
+                var id = ligne.attr('id');
+                var firstname = ligne.children().get(2).innerHTML;
+                var lastnamme = ligne.children().get(3).innerHTML;
+                
+                var res = confirm("Are you sure that you want to delete " 
+                        + firstname + " " + lastnamme
+                        + " from the application ?");
+                if(res == true){
+                    $.ajax({
+                       type: "POST",
+                       url: "./process/removeStudent.php",
+                       data: {id: id}, // serializes the form's elements.
+                       success: function(data)
+                       {
+                           if(data == "1"){
+                              window.location.replace("./dashboard.php");
+                           }else{
+                               alert("An error occured when deleting the user. Please try again !");
+                           }
+                       }
+                     });
+                }
+            });
         });
         
         

@@ -19,11 +19,11 @@
     <body>
         <nav>
             <div id="navigation" class="nav-wrapper amber accent-3">
-                <a href="login.php" class="brand-logo"><i class="material-icons">format_paint</i>PHP Website</a>
+                <a href="index.php" class="brand-logo"><i class="material-icons">format_paint</i>PHP Website</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#modal1"><i class="material-icons right">account_circle</i>Login</a></li>
-                    <li><a href="#modal2"><i class="material-icons right">person_add</i>Register</a></li>
+                    <li><a href="#modal1" id="buttonLogin"><i class="material-icons right">account_circle</i>Login</a></li>
+                    <li><a href="#modal2" id="buttonRegister"><i class="material-icons right">person_add</i>Register</a></li>
                 </ul>
             </div>
         </nav>
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class='row'>
-                <form class='col s12 m8 offset-m2 l8 offset-l2' action='./process/Old/processLogin.php' method='post' enctype='multipart/form-data' id="formLogin">
+                <form class='col s12 m8 offset-m2 l8 offset-l2' action='#' method='post' enctype='multipart/form-data' id="formLogin">
                     <div class='row'>
                         <div class='input-field col s12'>
                             <i class='material-icons prefix'>face</i>
@@ -74,7 +74,7 @@
             </div>
 
             <div class='row'>
-                <form class='col s12 m8 offset-m2 l6 offset-l3' action='./process/Old/storeMDP.php' method='post' enctype='multipart/form-data' id="#formRegister">
+                <form class='col s12 m8 offset-m2 l6 offset-l3' action='#' method='post' enctype='multipart/form-data' id="formRegister">
                     <div class='row'>
                         <div class='input-field col s12'>
                             <i class='material-icons prefix'>face</i>

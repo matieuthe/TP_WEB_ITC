@@ -25,14 +25,14 @@
                      <ul id="nav-mobile" class="right hide-on-med-and-down">
                          <li> <?php
                                 if(isset($photo) && $photo != ""){
-                                    echo "<a href='#modal1'><img style='max-height: 64px;padding: 15px 0' src=\"./ressource/img/".$photo."\"></a>";
+                                    echo "<a href='#modal1' id='buttonAddPhoto'><img style='max-height: 64px;padding: 15px 0' src=\"./ressource/img/".$photo."\"></a>";
                                 }else{
-                                    echo "<li><a href='#modal1'><i class='material-icons right'>add_a_photo</i></a></li>";
+                                    echo "<li><a href='#modal1' id='buttonAddPhoto'><i class='material-icons right'>add_a_photo</i></a></li>";
                                 }
                             ?>
                          </li>
                         <li> Connected as <?php echo $username;?></li>
-                        <li><a href="#modal2"><i class="material-icons left">person_add</i>Add student</a></li>
+                        <li><a href="#modal2" id='buttonAddStudent'><i class="material-icons left">person_add</i>Add student</a></li>
                         <li><a href="./process/logout.php"><i class="material-icons left">power_settings_new</i>Logout</a></li>
                     </ul>
                 </div>
@@ -43,7 +43,7 @@
         <div id="modal1" class="modal">
             <div class="row">
                 <div class='col s10 center-align offset-s1'>
-                    <form action="./process/uploadImage.php" method="post" enctype="multipart/form-data">
+                    <form action="./process/uploadImage.php" method="post" enctype="multipart/form-data" id="formAddPhoto">
                         <div class="modal-content">
                             <h4>Select a picture</h4>
                         </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class='row'>
-                <form class='col s12 m8 offset-m2 l6 offset-l3' action='./process/Old/processAdd.php' method='post' enctype='multipart/form-data' id="formAddStudent">
+                <form class='col s12 m8 offset-m2 l6 offset-l3' action='#' method='post' enctype='multipart/form-data' id="formAddStudent">
                     <div class='row'>
                         <div class='input-field col s12'>
                             <i class='material-icons prefix'>account_balance</i>
@@ -81,10 +81,14 @@
                     </div>
 
                     <div class='row'>
-                        <div class='input-field col s12'>
+                        <div class='input-field col s6'>
                             <i class='material-icons prefix'>face</i>
-                            <input id='icon_prefix' type='text' class='validate' name='name' placeholder='Name'>
+                            <input id='icon_prefix' type='text' class='validate' name='fname' placeholder='Firstname'>
                         </div>
+                        <div class='input-field col s6'>
+                            <input id='icon_prefix' type='text' class='validate' name='lname' placeholder='Lastname'>
+                        </div>
+
                     </div>
 
                     <div class='row'>
@@ -93,14 +97,28 @@
                             <input id='icon_prefix' type='text' class='validate' name='sex' placeholder='Gender'>
                         </div>
                     </div>
+                    
+                    <div class='row'>
+                        <div class='input-field col s12'>
+                            <i class='material-icons prefix'>group</i>
+                            <input id='icon_prefix' type='text' class='validate' name='group' placeholder='Group'>
+                        </div>
+                    </div>
 
+                    <div class='row'>
+                        <div class='input-field col s12'>
+                            <i class='material-icons prefix'>email</i>
+                            <input id='icon_prefix' type='text' class='validate' name='email' placeholder='Email'>
+                        </div>
+                    </div>
+                    
                     <div class='row'>
                         <div class='input-field col s12'>
                             <i class='material-icons prefix'>call</i>
                             <input id='icon_prefix' type='text' class='validate' name='tel' placeholder='Phone number'>
                         </div>
                     </div>
-
+                    
 
                     <div class='row'>
                         <div class='col s6 center-align offset-s3'>

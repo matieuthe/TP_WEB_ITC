@@ -3,7 +3,21 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('.modal').modal();
+            
+            $('#buttonLogin').click(function(e){
+                $("#titleLogin").text("Login");
+                $("#titleLogin").css("color", "black");
+                document.getElementById("formLogin").reset();
+                $('#modal1').modal();
+            });
+            
+            $('#buttonRegister').click(function(e){
+                $("#titleRegister").text("Register");
+                $("#titleRegister").css("color", "black");
+                document.getElementById("formRegister").reset();
+                $('#modal2').modal();
+            });
+            
             
             $("#formLogin").submit(function(e) {
                 e.preventDefault(); // avoid to execute the actual submit of the form.
@@ -44,8 +58,6 @@
                      });
 
             });
-            
-            
         });
        
         
